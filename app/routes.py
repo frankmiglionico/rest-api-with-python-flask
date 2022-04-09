@@ -1,13 +1,12 @@
 from app import app
 from app.db import DB
 
-from flask import render_template, jsonify, request, url_for
+from flask import render_template, jsonify, request
 
 @app.route('/')
 @app.route('/index')
 def index():
-    user = 'Frank'
-    return render_template('index.html', title='This', user=user)
+    return render_template('index.html')
 
 @app.route('/clientes', methods=['GET'])
 def clientes():
