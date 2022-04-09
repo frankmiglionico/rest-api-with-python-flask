@@ -1,7 +1,7 @@
 from app import app
 from app.db import DB
 
-from flask import render_template, jsonify, request
+from flask import render_template, jsonify, request, url_for
 
 @app.route('/')
 @app.route('/index')
@@ -10,7 +10,7 @@ def index():
     return render_template('index.html', title='This', user=user)
 
 @app.route('/clientes', methods=['GET'])
-def clientes_get():
+def clientes():
     params = {}
     if 'id' in request.args:
         params['id'] = int(request.args['id'])
@@ -76,7 +76,7 @@ def cliente_delete():
     return jsonify(db.delete_cliente(params=params))
 
 @app.route('/produtos', methods=['GET'])
-def produtos_get():
+def produtos():
     params = {}
     if 'id' in request.args:
         params['id'] = int(request.args['id'])
@@ -142,7 +142,7 @@ def produto_delete():
     return jsonify(db.delete_produto(params=params))
 
 @app.route('/vendas', methods=['GET'])
-def vendas_get():
+def vendas():
     params = {}
     if 'id' in request.args:
         params['id'] = int(request.args['id'])

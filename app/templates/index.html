@@ -1,5 +1,12 @@
-{% extends "base.html" %}
-
-{% block content %}
-    <h1>Hi, {{ user }}!</h1>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REST API</title>
+</head>
+<body>
+    <p><a href="{{ url_for('clientes_all') }}">Clientes - All</a></p>
+    <p><a href="{{ url_for('produtos_all') }}">Produtos - All</a></p>
+    <p><a href="{{ url_for('vendas_all') }}">Vendas - All</a></p>
+</body>
+</html>
